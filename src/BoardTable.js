@@ -1,8 +1,13 @@
-// import Table from 'react-bootstrap/Table';
+import Table from 'react-bootstrap/Table';
+
+import { useState } from "react";
+import data from "./data";
 
 function BoardTable(params) {
+  const [posts, setPosts] = useState(data.sort((a, b) => b.id - a.id));
+
   return (
-    <table>
+    <Table>
       <thead>
         <tr>
           <th>번호</th>
@@ -11,23 +16,17 @@ function BoardTable(params) {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Jacob</td>
-          <td>Thornton</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        {posts.map((post) => {
+          return (
+            <tr>
+              <td>{post.id}</td>
+              <td>{post.title}</td>
+              <td>{post.date}</td>
+            </tr>
+          );
+        })}
       </tbody>
-    </table>
+    </Table>
   );
 }
 
