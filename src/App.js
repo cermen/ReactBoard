@@ -1,13 +1,17 @@
-import Table from 'react-bootstrap/Table';
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import BoardTable from './BoardTable';
 
 function App() {
   return (
     <div className="App">
-      <header className='bg-info'>
-        <div className='title'>Board</div>
-      </header>
+      <Navbar bg="info">
+        <Container>
+          <Navbar.Brand href="#home">Board</Navbar.Brand>
+        </Container>
+      </Navbar>
       <section>
         <BoardTable/>
       </section>

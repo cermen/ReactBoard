@@ -7,7 +7,7 @@ function BoardTable(params) {
   const [posts, setPosts] = useState(data.sort((a, b) => b.id - a.id));
 
   return (
-    <Table>
+    <Table striped>
       <thead>
         <tr>
           <th>번호</th>

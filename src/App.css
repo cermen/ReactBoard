@@ -7,3 +7,8 @@ header {
   font-size: 20pt;
   padding: 10px 0 0 24px;
 }
+
+section {
+  width: 70%;
+  margin: 10px auto;
+}
