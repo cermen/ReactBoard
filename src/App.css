@@ -1,4 +1,10 @@
-section {
+main {
   width: 70%;
   margin: 10px auto;
 }
+
+/* .atricle__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+} */

@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import BoardTable from "./BoardTable";
 import { Routes, Route, Link } from "react-router-dom";
+import Article from "./Article";
 
 function App() {
   return (
@@ -18,12 +19,12 @@ function App() {
         <Route
           path="/"
           element={
-            <section>
+            <main>
               <BoardTable />
-            </section>
+            </main>
           }
         />
-        <Route path="/content" element={<div>글 내용 페이지입니다.</div>} />
+        <Route path="/content" element={<Article/>} />
         <Route path="/write" element={<div>글 작성 페이지입니다.</div>} />
       </Routes>
     </div>
