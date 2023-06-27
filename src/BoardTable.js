@@ -2,9 +2,10 @@ import Table from 'react-bootstrap/Table';
 
 import { useState } from "react";
 import data from "./data";
+import { useNavigate } from 'react-router-dom';
 
-function BoardTable(params) {
-  const [posts, setPosts] = useState(data.sort((a, b) => b.id - a.id));
+function BoardTable(props) {
+  let navigate = useNavigate();
 
   return (
     <Table striped>
@@ -16,12 +17,12 @@ function BoardTable(params) {
         </tr>
       </thead>
       <tbody>
-        {posts.map((post) => {
+        {props.articles.map((article) => {
           return (
             <tr>
-              <td>{post.id}</td>
-              <td>{post.title}</td>
-              <td>{post.date}</td>
+              <td>{article.id}</td>
+              <td className="row__title" onClick={() => { navigate(`/content/${article.id}`) }}>{article.title}</td>
+              <td>{article.date}</td>
             </tr>
           );
         })}

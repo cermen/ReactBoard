@@ -3,8 +3,10 @@ main {
   margin: 10px auto;
 }
 
-/* .atricle__info {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-} */
+.row__title {
+  cursor: pointer;
+}
+
+.row__title:hover {
+  color: gray;
+}
