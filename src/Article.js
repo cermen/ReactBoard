@@ -8,7 +8,7 @@ function Article(props) {
 
   return (
     <main className='Article'>
-      <h1 className='article__title'>{article.title}</h1>
+      <h2 className='article__title'>{article.title}</h2>
       <p className='article__date'>{article.date}</p>
       <hr/>
       <div className='article__content'>{article.content}</div>

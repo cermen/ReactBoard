@@ -1,0 +1,16 @@
+h2 {
+  margin-bottom: 16px;
+}
+
+.add_btn {
+  width: 100px;
+  height: 40px;
+  background-color: #4285f4;
+  color: white;
+  border: transparent;
+  border-radius: 8px;
+}
+
+.add_btn:hover {
+  opacity: 0.9;
+}

@@ -7,6 +7,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Article from "./Article";
 import { useState } from "react";
 import data from "./data";
+import Write from "./Write";
 
 function App() {
   const [articles, setArticles] = useState(data.sort((a, b) => b.id - a.id));
@@ -30,7 +31,7 @@ function App() {
           }
         />
         <Route path="/content/:id" element={<Article articles={articles}/>} />
-        <Route path="/write" element={<div>글 작성 페이지입니다.</div>} />
+        <Route path="/write" element={<Write/>} />
       </Routes>
     </div>
   );

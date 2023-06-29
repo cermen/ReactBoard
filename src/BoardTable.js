@@ -9,6 +9,11 @@ function BoardTable(props) {
   let navigate = useNavigate();
 
   return (
+    <>
+    <header>
+      <h2>글 목록</h2>
+      <button className={styles.new_article_btn} onClick={ () => navigate("/write") }>새 글 작성</button>
+    </header>
     <Table striped>
       <thead>
         <tr>
@@ -29,6 +34,7 @@ function BoardTable(props) {
         })}
       </tbody>
     </Table>
+    </>
   );
 }
 

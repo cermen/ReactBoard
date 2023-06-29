@@ -1,7 +1,25 @@
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .row__title {
   cursor: pointer;
 }
 
 .row__title:hover {
   color: gray;
+}
+
+.new_article_btn {
+  width: 100px;
+  height: 40px;
+  background-color: #4285f4;
+  color: white;
+  border: transparent;
+  border-radius: 8px;
+}
+
+.new_article_btn:hover {
+  opacity: 0.9;
 }
