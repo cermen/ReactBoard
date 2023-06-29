@@ -1,7 +1,7 @@
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.css";
-import "./App.css";
+import styles from "./App.module.css";
 import BoardTable from "./BoardTable";
 import { Routes, Route, Link } from "react-router-dom";
 import Article from "./Article";

@@ -1,0 +1,12 @@
+.article__prev {
+  width: 100px;
+  height: 40px;
+  background-color: #ccc;
+  border: transparent;
+  border-radius: 8px;
+  margin-top: 40px;
+}
+
+.article__prev:hover {
+  background-color: #c0c0c0;
+}

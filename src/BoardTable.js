@@ -3,6 +3,7 @@ import Table from 'react-bootstrap/Table';
 import { useState } from "react";
 import data from "./data";
 import { useNavigate } from 'react-router-dom';
+import styles from "./BoardTable.module.css";
 
 function BoardTable(props) {
   let navigate = useNavigate();
@@ -21,7 +22,7 @@ function BoardTable(props) {
           return (
             <tr>
               <td>{article.id}</td>
-              <td className="row__title" onClick={() => { navigate(`/content/${article.id}`) }}>{article.title}</td>
+              <td className={styles.row__title} onClick={() => { navigate(`/content/${article.id}`) }}>{article.title}</td>
               <td>{article.date}</td>
             </tr>
           );
