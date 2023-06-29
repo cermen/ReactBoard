@@ -11,13 +11,12 @@ import Write from "./Write";
 
 function App() {
   const [articles, setArticles] = useState(data.sort((a, b) => b.id - a.id));
-  console.log(articles);
 
   return (
     <div className="App">
       <Navbar bg="info">
         <Container>
-          <Navbar.Brand href="#home">Board</Navbar.Brand>
+          <Navbar.Brand href="/">Board</Navbar.Brand>
         </Container>
       </Navbar>
       
