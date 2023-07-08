@@ -10,7 +10,7 @@ import data from "./data";
 import Write from "./Write";
 
 function App() {
-  const [articles, setArticles] = useState(data.sort((a, b) => b.id - a.id));
+  const [articles, setArticles] = useState(data);
 
   return (
     <div className="App">
@@ -29,8 +29,12 @@ function App() {
             </main>
           }
         />
-        <Route path="/content/:id" element={<Article articles={articles}/>} />
-        <Route path="/write" element={<Write/>} />
+        <Route path="/content/:id" element={
+          <main>
+            <Article articles={articles}/>
+          </main>
+        } />
+        <Route path="/write" element={<Write articles={articles} handleArticles={setArticles}/>} />
       </Routes>
     </div>
   );
