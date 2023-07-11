@@ -10,6 +10,8 @@ import data from "./data";
 import Write from "./Write";
 
 function App() {
+  data.sort((a, b) => b.id - a.id);
+  console.log(data);
   const [articles, setArticles] = useState(data);
 
   return (
