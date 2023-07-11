@@ -1,12 +1,34 @@
-.article__prev {
-  width: 100px;
+.article__btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.article__btns button {
+  width: 90px;
   height: 40px;
-  background-color: #ccc;
   border: transparent;
   border-radius: 8px;
   margin-top: 40px;
 }
 
-.article__prev:hover {
+.article__btns button:hover {
+  opacity: 0.9;
+}
+
+.btns__crtlBtns button {
+  margin-left: 8px;
+}
+
+.btns__prevBtn {
   background-color: #c0c0c0;
+}
+
+.btns__updateBtn {
+  background-color: #32a852;
+  color: white;
+}
+
+.btns__deleteBtn {
+  background-color: #eb4034;
+  color: white;
 }

@@ -8,6 +8,7 @@ import styles from "./BoardTable.module.css";
 function BoardTable(props) {
   let navigate = useNavigate();
 
+  // 글 목록 보여주기 (Read)
   return (
     <>
     <header>

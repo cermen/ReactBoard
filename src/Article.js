@@ -12,7 +12,13 @@ function Article(props) {
       <p className='article__date'>{article.date}</p>
       <hr/>
       <div className='article__content'>{article.content}</div>
-      <button className={styles.article__prev} onClick={ () => navigate(-1) }>목록으로</button>
+      <div className={styles.article__btns}>
+        <button className={styles.btns__prevBtn} onClick={ () => navigate(-1) }>목록으로</button>
+        <div className={styles.btns__crtlBtns}>
+          <button className={styles.btns__updateBtn} onClick={ () => navigate(-1) }>수정하기</button>
+          <button className={styles.btns__deleteBtn} onClick={ () => navigate(-1) }>삭제하기</button>
+        </div>
+      </div>
     </main>
   );
 }

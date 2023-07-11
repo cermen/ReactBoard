@@ -9,6 +9,7 @@ function Write({ articles, handleArticles }) {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
+  // 글 추가하기 (Create)
   const addArticle = () => {
     const ids = articles.map(a => a.id);
     const newId = Math.max(...ids) + 1;
