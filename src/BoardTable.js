@@ -5,7 +5,7 @@ import data from "./data";
 import { useNavigate } from 'react-router-dom';
 import styles from "./BoardTable.module.css";
 
-function BoardTable(props) {
+export default function BoardTable(props) {
   let navigate = useNavigate();
 
   // 글 목록 보여주기 (Read)
@@ -38,5 +38,3 @@ function BoardTable(props) {
     </>
   );
 }
-
-export default BoardTable;

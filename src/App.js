@@ -9,7 +9,7 @@ import { useState } from "react";
 import data from "./data";
 import Write from "./Write";
 
-function App() {
+export default function App() {
   data.sort((a, b) => b.id - a.id);
   const [articles, setArticles] = useState(data);
 
@@ -40,5 +40,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
