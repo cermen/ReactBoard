@@ -32,3 +32,44 @@
   background-color: #eb4034;
   color: white;
 }
+
+.deleteModal {
+  position: fixed;
+  top: calc(50% - 50px);
+  left: calc(50% - 125px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 250px;
+  height: 100px;
+  margin: auto;
+  padding: 12px;
+  border: 1px solid gray;
+  border-radius: 8px;
+}
+
+.deleteModal__msg {
+  margin: 0;
+}
+
+.deleteModal__buttons {
+  display: flex;
+  justify-content: right;
+}
+
+.deleteModal__buttons > button {
+  margin-left: 8px;
+  width: 60px;
+  height: 30px;
+  border: transparent;
+  border-radius: 4px;
+}
+
+.buttons__yes {
+  background-color: #eb4034;
+  color: white;
+}
+
+.buttons__no {
+  background-color: #ccc;
+}

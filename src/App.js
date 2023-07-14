@@ -32,7 +32,7 @@ export default function App() {
         />
         <Route path="/content/:id" element={
           <main>
-            <Article articles={articles}/>
+            <Article articles={articles} handleArticles={setArticles}/>
           </main>
         } />
         <Route path="/write" element={<Write articles={articles} handleArticles={setArticles}/>} />
