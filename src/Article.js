@@ -1,7 +1,6 @@
 import { useNavigate, useParams } from "react-router-dom";
 import styles from "./Article.module.css";
 import { useState } from "react";
-// import DeleteModal from "./DeleteModal";
 
 export default function Article({ articles, handleArticles }) {
   const { id } = useParams();
@@ -10,9 +9,13 @@ export default function Article({ articles, handleArticles }) {
 
   const navigate = useNavigate();
 
+  const backToMain = () => navigate('/');    // 메인 페이지로 이동
+  const toggleModal = () => setShowDeleteModal(!showDeleteModal); // 삭제 확인 창 띄우기/숨기기
+
+  // 글 삭제하기 (Delete)
   const deleteArticle = () => {
     const newArticles = articles.filter((a) => a.id !== Number(id));
-    navigate('/');
+    backToMain();
     handleArticles(newArticles);
   }
 
@@ -22,7 +25,7 @@ export default function Article({ articles, handleArticles }) {
         <p className={styles.deleteModal__msg}>게시글을 삭제하시겠습니까?</p>
         <div className={styles.deleteModal__buttons}>
           <button className={styles.buttons__yes} onClick={deleteArticle}>예</button>
-          <button className={styles.buttons__no} onClick={ () => setShowDeleteModal(!showDeleteModal) }>아니오</button>
+          <button className={styles.buttons__no} onClick={toggleModal}>아니오</button>
         </div>
       </div>
     );
@@ -37,10 +40,10 @@ export default function Article({ articles, handleArticles }) {
         <hr/>
         <div className='article__content'>{article.content}</div>
         <div className={styles.article__btns}>
-          <button className={styles.btns__prevBtn} onClick={ () => navigate(-1) }>목록으로</button>
+          <button className={styles.btns__prevBtn} onClick={backToMain}>목록으로</button>
           <div className={styles.btns__crtlBtns}>
-            <button className={styles.btns__updateBtn} onClick={ () => navigate(-1) }>수정하기</button>
-            <button className={styles.btns__deleteBtn} onClick={ () => setShowDeleteModal(!showDeleteModal) }>삭제하기</button>
+            <button className={styles.btns__updateBtn} onClick={backToMain}>수정하기</button>
+            <button className={styles.btns__deleteBtn} onClick={toggleModal}>삭제하기</button>
           </div>
         </div>
       </main>
