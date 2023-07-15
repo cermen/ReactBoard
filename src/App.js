@@ -36,6 +36,7 @@ export default function App() {
           </main>
         } />
         <Route path="/write" element={<Write articles={articles} handleArticles={setArticles}/>} />
+        <Route path="/write/:id" element={<Write articles={articles} handleArticles={setArticles}/>} />
       </Routes>
     </div>
   );

@@ -1,13 +1,15 @@
 import Form from 'react-bootstrap/Form';
 import styles from "./Write.module.css";
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function Write({ articles, handleArticles }) {
+  const { id } = useParams();
+  const [article] = articles.filter((a) => a.id === Number(id));
   const navigate = useNavigate();
 
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [title, setTitle] = useState(!id ? "" : article.title);
+  const [content, setContent] = useState(!id ? "" : article.content);
 
   // 글 추가하기 (Create)
   const addArticle = () => {
@@ -28,6 +30,20 @@ function Write({ articles, handleArticles }) {
     handleArticles(updatedArticles);
   };
 
+  // 글 수정하기(Update)
+  const updateArticle = () => {
+    handleArticles(articles.map(a => {
+      if (a.id === Number(id)) {
+        return {
+          ...a,
+          title: title,
+          content: content,
+        };
+      }
+      return a;
+    }))
+  }
+
   const handleTitle = (e) => {
     setTitle(e.target.value);
   };
@@ -38,21 +54,21 @@ function Write({ articles, handleArticles }) {
 
   return (
     <main>
-      <h2>새 글 작성</h2>
+      <h2>{!id ? "새 글 작성" : "글 수정하기"}</h2>
       <Form>
         <Form.Group className="mb-3">
           <Form.Label>제목</Form.Label>
-          <Form.Control onChange={handleTitle} type="email"/>
+          <Form.Control onChange={handleTitle} type="email" value={title}/>
         </Form.Group>
         <Form.Group className="mb-3">
           <Form.Label>내용</Form.Label>
-          <Form.Control onChange={handleContent} as="textarea" rows={10} />
+          <Form.Control onChange={handleContent} as="textarea" rows={10} value={content}/>
         </Form.Group>
       </Form>
       <button onClick={() => {
-        addArticle();
-        navigate(-1);
-      }} className={styles.add_btn}>등록하기</button>
+        !id ? addArticle() : updateArticle();
+        navigate('/');
+      }} className={styles.add_btn}>{!id ? "등록하기" : "수정하기"}</button>
     </main>
   );
 }

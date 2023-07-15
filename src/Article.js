@@ -42,7 +42,7 @@ export default function Article({ articles, handleArticles }) {
         <div className={styles.article__btns}>
           <button className={styles.btns__prevBtn} onClick={backToMain}>목록으로</button>
           <div className={styles.btns__crtlBtns}>
-            <button className={styles.btns__updateBtn} onClick={backToMain}>수정하기</button>
+            <button className={styles.btns__updateBtn} onClick={() => navigate(`/write/${id}`)}>수정하기</button>
             <button className={styles.btns__deleteBtn} onClick={toggleModal}>삭제하기</button>
           </div>
         </div>
