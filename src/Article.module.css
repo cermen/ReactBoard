@@ -11,7 +11,8 @@
   margin-top: 40px;
 }
 
-.article__btns button:hover {
+.article__btns button:hover,
+.deleteModal__buttons button:hover{
   opacity: 0.9;
 }
 
@@ -33,6 +34,16 @@
   color: white;
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* 검은색 투명 배경 */
+  z-index: 9999; /* 모달 창 위에 위치하도록 z-index 설정 */
+}
+
 .deleteModal {
   position: fixed;
   top: calc(50% - 50px);
@@ -44,8 +55,9 @@
   height: 100px;
   margin: auto;
   padding: 12px;
-  border: 1px solid gray;
+  border: 2px solid #ccc;
   border-radius: 8px;
+  background-color: white;
 }
 
 .deleteModal__msg {
